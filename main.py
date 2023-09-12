@@ -31,7 +31,7 @@ async def on_message(message):
 
     if message.content.startswith('!talk'):
         match = re.search(r"!talk (.*)", message.content)
-        _talk.run(match)
+        _talk.run(match.group(1))
 
         await message.channel.send(file=discord.File('new.wav'))
 
